@@ -1,0 +1,45 @@
+.bar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: var(--white);
+    box-shadow: 0 -8px 24px -12px rgba(1, 34, 59, 0.4);
+  }
+
+  .call,
+  .quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+  }
+
+  .call {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .quote {
+    background: var(--orange);
+    color: var(--white);
+  }
+}

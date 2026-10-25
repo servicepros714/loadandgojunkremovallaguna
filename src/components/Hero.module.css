@@ -1,0 +1,335 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgba(29, 74, 112, 0.65) 0%, transparent 60%),
+    linear-gradient(160deg, var(--navy) 0%, var(--navy-900) 100%);
+  color: var(--white);
+  padding: 84px 0 104px;
+}
+
+/* Bottom edge cut on the slant */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 56px;
+  background: var(--sand);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+/* Tapered orange blades — lifted from the logo's underline strokes */
+.speed {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.speed span {
+  position: absolute;
+  height: 7px;
+  background: linear-gradient(90deg, transparent, var(--orange));
+  clip-path: polygon(0 45%, 100% 0, 96% 100%, 0 55%);
+  opacity: 0.9;
+}
+
+.speed span:nth-child(1) {
+  width: 46%;
+  top: 22%;
+  right: -4%;
+}
+
+.speed span:nth-child(2) {
+  width: 30%;
+  top: 27%;
+  right: 4%;
+  opacity: 0.45;
+}
+
+.speed span:nth-child(3) {
+  width: 38%;
+  bottom: 24%;
+  left: -6%;
+  opacity: 0.35;
+  transform: scaleX(-1);
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.kickerDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 4px rgba(254, 100, 9, 0.25);
+}
+
+.title {
+  margin-top: 22px;
+  color: var(--white);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 4.6vw, 3.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+}
+
+.titleAccent {
+  display: block;
+  color: var(--orange);
+}
+
+.lead {
+  margin-top: 22px;
+  font-size: 1.16rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 560px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.proof {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.proof li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proof svg {
+  color: var(--orange);
+}
+
+/* Right column — a "load ticket" card */
+.visual {
+  position: relative;
+  min-width: 0;
+  padding: 10px 10px 30px 0;
+}
+
+.ticket {
+  position: relative;
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.6);
+  transform: rotate(-2deg);
+}
+
+.ticket::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 26px;
+  right: 26px;
+  height: 6px;
+  background: var(--orange);
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+}
+
+.ticketHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed var(--line);
+}
+
+.ticketLabel {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  color: var(--navy);
+}
+
+.ticketTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--orange-100);
+  color: var(--orange-600);
+  font-weight: 700;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.ticketList {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.ticketList li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #efe8dc;
+}
+
+.tick {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--navy);
+  color: var(--white);
+  transform: skewX(var(--slant));
+}
+
+.tick svg {
+  transform: skewX(10deg);
+}
+
+.rowItem {
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: line-through;
+  text-decoration-color: var(--orange);
+  text-decoration-thickness: 2px;
+}
+
+.rowWhere {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.ticketFoot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.ticketFoot > div {
+  background: var(--sand);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.footSmall {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.ticketFoot strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--navy);
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.badge {
+  position: absolute;
+  right: -6px;
+  bottom: -4px;
+  background: var(--orange);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: 10px;
+  transform: skewX(var(--slant));
+  box-shadow: 0 18px 30px -14px rgba(254, 100, 9, 0.8);
+  text-align: center;
+}
+
+.badge strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.badge span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .visual {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 52px 0 84px;
+  }
+  .ctas :global(.btn) {
+    width: 100%;
+  }
+  .ticket {
+    padding: 22px 18px 18px;
+    transform: rotate(-1deg);
+  }
+  .rowWhere {
+    display: none;
+  }
+  .ticketList li {
+    grid-template-columns: auto 1fr;
+  }
+  .badge {
+    right: 0;
+  }
+}

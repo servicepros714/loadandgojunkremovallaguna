@@ -1,0 +1,94 @@
+.section {
+  padding: 80px 0;
+}
+
+.band {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px 52px;
+  border-radius: 18px;
+  background: var(--orange);
+  color: var(--white);
+}
+
+.band::before,
+.band::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(var(--slant));
+  pointer-events: none;
+}
+
+.band::before {
+  right: 18%;
+  width: 90px;
+}
+
+.band::after {
+  right: 6%;
+  width: 36px;
+}
+
+.copy,
+.ctas {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  color: var(--white);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.text {
+  margin-top: 10px;
+  max-width: 520px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btnWhite {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.btnWhite:hover {
+  background: var(--sand);
+}
+
+@media (max-width: 860px) {
+  .band {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 28px;
+  }
+  .ctas {
+    width: 100%;
+  }
+  .ctas :global(.btn) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 56px 0;
+  }
+}

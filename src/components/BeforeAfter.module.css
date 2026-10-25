@@ -1,0 +1,124 @@
+.section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.list {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.job {
+  background: var(--sand);
+  border-radius: 14px;
+  padding: 14px 14px 22px;
+  border-bottom: 4px solid var(--orange);
+}
+
+.pair {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.shot {
+  position: relative;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--sand-200);
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  transform: skewX(var(--slant));
+}
+
+.before {
+  background: var(--navy);
+}
+
+.after {
+  background: var(--orange);
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--orange);
+  box-shadow: 0 6px 16px -6px rgba(1, 34, 59, 0.5);
+  z-index: 1;
+}
+
+.title {
+  margin-top: 18px;
+  padding: 0 6px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.caption {
+  margin-top: 6px;
+  padding: 0 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.foot {
+  margin-top: 44px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .list {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 72px 0;
+  }
+  .job {
+    padding: 10px 10px 18px;
+  }
+  .foot :global(.btn) {
+    width: 100%;
+  }
+}

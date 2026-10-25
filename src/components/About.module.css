@@ -1,0 +1,44 @@
+.section {
+  padding: 100px 0;
+  background: var(--white);
+  position: relative;
+}
+
+.inner {
+  max-width: 780px;
+  text-align: center;
+}
+
+.copy {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 1.1rem;
+  color: #3a4a5b;
+}
+
+.sign {
+  display: inline-block;
+  margin-top: 34px;
+  padding: 10px 26px;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transform: skewX(var(--slant));
+  border-radius: 6px;
+  box-shadow: 6px 6px 0 var(--orange);
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 72px 0;
+  }
+  .copy {
+    font-size: 1.02rem;
+  }
+}

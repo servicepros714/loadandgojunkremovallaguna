@@ -1,0 +1,120 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: var(--white);
+  padding: 100px 0;
+}
+
+.stripe {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 34%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(29, 74, 112, 0.6), transparent);
+  transform: skewX(var(--slant));
+  pointer-events: none;
+}
+
+.section :global(.container) {
+  position: relative;
+}
+
+.eyebrow {
+  color: var(--orange);
+}
+
+.title {
+  color: var(--white);
+}
+
+.lead {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.steps {
+  list-style: none;
+  margin: 56px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  counter-reset: step;
+}
+
+.step {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 34px 28px 30px;
+}
+
+/* connector blade between steps */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 58px;
+  right: -26px;
+  width: 26px;
+  height: 5px;
+  background: var(--orange);
+  clip-path: polygon(0 40%, 100% 0, 92% 100%, 0 60%);
+}
+
+.num {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 52px;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8rem;
+  border-radius: 8px;
+  transform: skewX(var(--slant));
+  margin-bottom: 22px;
+}
+
+.stepTitle {
+  color: var(--white);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+}
+
+.stepText {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ctas {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 72px 0;
+  }
+  .ctas :global(.btn) {
+    width: 100%;
+  }
+}
